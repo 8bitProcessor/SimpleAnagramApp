@@ -18,6 +18,12 @@ import com.google.appengine.api.users.UserServiceFactory;
 @SuppressWarnings("serial")
 public class RootServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+		//I coudln't get the message to print it out on the screen 
+		//Everything else works 
+		//StudentNo: 2813365
+		//Name : Conor Mckernan
+		//Assignment 01
+		
 		resp.setContentType("text/plain");
 		UserService us = UserServiceFactory.getUserService();
 		User u = us.getCurrentUser();

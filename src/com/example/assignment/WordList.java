@@ -30,7 +30,7 @@ public class WordList {
 		word = my_words.get(index);
 		return word;
 	}
-	public boolean addWord(final String word){
+	public boolean addWord(final String word) {
 		if(!my_words.contains(word)){
 			my_words.add(word);
 			return true;

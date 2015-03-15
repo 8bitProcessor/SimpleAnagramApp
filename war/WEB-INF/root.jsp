@@ -32,8 +32,20 @@
   					</form>
 					</br>
   					</br>
-  							${message}
-  					 
+
+					<c:choose>
+      				<c:when test="${message==null}">
+      				<br />
+      				</c:when>
+					<c:otherwise>
+					<p>
+						 ${requestScope.message}
+						<br/>
+						${requestScope.word_array}
+      				<br />
+      				</p>
+      			</c:otherwise>
+			</c:choose>
   				</p>
   			</c:when>
   			<c:otherwise>

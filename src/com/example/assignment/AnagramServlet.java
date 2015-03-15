@@ -22,6 +22,7 @@ public class AnagramServlet extends HttpServlet{
 		
 		if(word==null){
 			String emptyValue = "No value has been entered";
+			System.out.println(emptyValue);
 			req.setAttribute("message", emptyValue);
 			resp.sendRedirect("/");
 		}else{
@@ -49,20 +50,23 @@ public class AnagramServlet extends HttpServlet{
 				}	
 			}
 			if(anagram_words!=null){
-				
-					
-				
-				
-				
 				String matches ="Here are the anagram of your word";
-				req.setAttribute("anagram_words", anagram_words);
+				System.out.println(matches);
+				String[] wordArray = new String[anagram_words.length];
+				for(int i=0; i<anagram_words.length; i++){
+					if(anagram_words[i]!=null){
+						wordArray[i]=anagram_words[i];
+						System.out.println(wordArray[i]);
+					}
+				}
+				req.setAttribute("word_array", wordArray);
 				req.setAttribute("message", matches);
 				resp.sendRedirect("/");
-				
-
 			}else{
 				String no_matches="There were no anagrams of this word";
+				System.out.println(no_matches);				
 				req.setAttribute("message", no_matches);
+				resp.sendRedirect("/");
 			}
 			}catch(Exception e){
 				//Will only fail if datastore goes down	
@@ -75,6 +79,7 @@ public class AnagramServlet extends HttpServlet{
 		word = req.getParameter("add_word");
 		if(word==null){
 			String emptyValue = "No value has been entered";
+			System.out.println(emptyValue);
 			req.setAttribute("message", emptyValue);
 			resp.sendRedirect("/");
 		}else{
@@ -88,12 +93,15 @@ public class AnagramServlet extends HttpServlet{
 				user_words = pm.getObjectById(WordList.class, user_key);
 				if(user_words.addWord(word)==true){
 					pm.makePersistent(user_words);
-					String success ="This words has been added";
+					String success ="This word has been added";
+					System.out.println(success);
 					req.setAttribute("message", success);
 					resp.sendRedirect("/");
 				}
 				else{
+					
 					String fail = "This word already exists";
+					System.out.println(fail);
 					req.setAttribute("message", fail);
 					pm.close();
 					resp.sendRedirect("/");
