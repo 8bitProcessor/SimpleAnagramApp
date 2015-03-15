@@ -18,7 +18,7 @@
   					
   					
   					You can search for an anagram of your word here</br> 
-  					<form action="/" method="get" >
+  					<form action="/anagramservlet" method="get" >
 						<input type="text" name="search_word"/> 
 						<input type="submit" value="submit"/> 
   					</form>
@@ -26,19 +26,13 @@
   					You can add a word here.
   					</br>
   					</br>
-  					<form action="/" method="post" >
+  					<form action="/anagramservlet" method="post" >
 						<input type="text" name="add_word"/> 
 						<input type="submit" value="submit"/> 
   					</form>
 					</br>
   					</br>
-  					
-  					
   							${message}
-  					
-  						
-  					
-  					
   					 
   				</p>
   			</c:when>

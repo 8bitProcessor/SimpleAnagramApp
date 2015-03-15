@@ -8,14 +8,23 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	
 	<servlet>
 		<servlet-name>RootServlet</servlet-name>
-		<servlet-class>com.example.assignment.AnagramServlet</servlet-class>
+		<servlet-class>com.example.assignment.RootServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>RootServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+    
+	<servlet>
+		<servlet-name>AnagramServlet</servlet-name>
+		<servlet-class>com.example.assignment.AnagramServlet</servlet-class>
+	</servlet>
 
-	
+	<servlet-mapping>
+		<servlet-name>AnagramServlet</servlet-name>
+		<url-pattern>/anagramservlet</url-pattern>
+	</servlet-mapping>
+    
 	
 	
 </web-app>
