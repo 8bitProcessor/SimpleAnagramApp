@@ -20,19 +20,7 @@ public class WordList {
 	public void setID(final Key id) { this.id=id;}
 	public void createWordList(){ my_words =new ArrayList<String>();}
 	
-	
-	public List<String> checkAnagram(String word){
-		List<String> anagram_list = new ArrayList<String>();
-		
-		
-		
-		
-		
-		return anagram_list;
-		
-	}
-	
-	
+
 	public int wordCount(){
 		int num_words = my_words.size(); 
 		return num_words;

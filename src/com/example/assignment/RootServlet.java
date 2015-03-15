@@ -23,7 +23,6 @@ public class RootServlet extends HttpServlet {
 		User u = us.getCurrentUser();
 		String login_url = us.createLoginURL("/");
 		String logout_url = us.createLogoutURL("/");
-		String message = "Test";
 		PersistenceManager pm = null; 
 		WordList user_words = null;
 		if(u!=null){
@@ -43,7 +42,6 @@ public class RootServlet extends HttpServlet {
 		req.setAttribute("user", u);
 		req.setAttribute("login_url", login_url);
 		req.setAttribute("logout_url", logout_url);
-		req.setAttribute("message", message);
 		RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/root.jsp");
 		rd.forward(req, resp);
 	}
